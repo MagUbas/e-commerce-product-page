@@ -1,0 +1,11 @@
+
+
+.imgRow > div > img:hover{
+    opacity: 0.7;
+   
+}
+.imgActive {
+    opacity: 0.5;
+    outline: 3px solid hsl(26, 100%, 55%)
+}
+

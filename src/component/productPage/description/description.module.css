@@ -1,0 +1,34 @@
+.descriptionBody {
+    text-align: left;
+    margin-left: 80px;
+    padding-top: 50px;
+}
+
+.description > p:first-of-type{
+    color:hsl(26, 100%, 55%);
+    font-weight: bold;
+}
+
+.description > h1:first-of-type{
+    font-weight: bold;
+}
+.descriptionText{
+    color:hsl(219, 9%, 45%)
+}
+
+.descriptionPrice{
+    font-weight: bold;
+    line-height: 40px;
+}
+.descriptionSale{
+    background-color: hsl(25, 100%, 94%);
+    color:hsl(26, 100%, 55%);
+    font-size:medium;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+  width: 40px;
+ 
+  line-height: 40px;
+  margin-left: 10px;
+}

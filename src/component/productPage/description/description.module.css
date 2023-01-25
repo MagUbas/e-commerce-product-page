@@ -1,15 +1,17 @@
+
+
 .descriptionBody {
     text-align: left;
     margin-left: 80px;
     padding-top: 50px;
 }
 
-.description > p:first-of-type{
+.descriptionBody > p:first-of-type{
     color:hsl(26, 100%, 55%);
     font-weight: bold;
 }
 
-.description > h1:first-of-type{
+.descriptionBody > h1:first-of-type{
     font-weight: bold;
 }
 .descriptionText{
@@ -27,8 +29,43 @@
     border-radius: 5px;
     display: inline-block;
     text-align: center;
-  width: 40px;
- 
   line-height: 40px;
   margin-left: 10px;
 }
+
+.descriptionOldPrice{
+    color:hsl(220, 14%, 75%);
+    font-weight: bold;
+    text-decoration: line-through;
+}
+.descriptionBtnGroup {
+
+    width: 130px;
+    margin-right: 20px;
+}
+.descriptionBtnGroup > label{
+    background-color: hsl(223, 64%, 96.5%);
+    color:hsl(26, 100%, 55%);
+    font-weight: bold;
+    line-height: 35px;
+    font-size: large;
+}
+.descriptionBtnGroup > label:hover{
+    background-color: hsl(223, 64%, 96.5%);
+    color:hsl(25, 100%, 84%);
+}
+.descriptionBtnCart{
+background-color: hsl(26, 100%, 55%);
+border-color:hsl(26, 100%, 55%);
+}
+.descriptionBtnCart:hover{
+    background-color: hsl(25, 100%, 70%);
+    border-color:hsl(25, 100%, 70%);
+    }
+.logoBtn{
+    margin-right: 5px;
+    filter:  brightness(0) invert(1);
+    scale: 0.7;
+    height: 100%;
+}
+  

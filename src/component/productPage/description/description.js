@@ -1,4 +1,5 @@
 import classes from "./description.module.css";
+import iconCart from "./icon-cart.svg";
 
 const Description = () => {
   return (
@@ -15,7 +16,28 @@ const Description = () => {
         <p className={`col ${classes.descriptionSale}`}>50%</p>
       </div>
       <div className={` ${classes.descriptionOldPrice}`}>$250.00</div>
-      <div>cart</div>
+      <div style={{ marginTop: "20px" }}>
+        <div
+          className={`btn-group btn-group-toggle ${classes.descriptionBtnGroup}`}
+          data-toggle="buttons"
+        >
+          <label className="btn  ">-</label>
+          <label
+            className="btn "
+            style={{ color: "black", fontSize: "medium" }}
+          >
+            2
+          </label>
+          <label className="btn ">+</label>
+        </div>
+        <button
+          type="button"
+          className={`btn btn-secondary btn-lg ${classes.descriptionBtnCart}`}
+        >
+          <img src={iconCart} alt="cart" className={classes.logoBtn} />
+          Add to cart
+        </button>
+      </div>
     </div>
   );
 };

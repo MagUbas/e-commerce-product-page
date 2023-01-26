@@ -1,7 +1,29 @@
+import { useState } from "react";
 import classes from "./description.module.css";
 import iconCart from "./icon-cart.svg";
 
 const Description = () => {
+  const [amount, setAmount] = useState(1);
+  const changeAmount = (type) => {
+    const prevAmount = amount;
+    switch (type) {
+      case "add":
+        setAmount(prevAmount + 1);
+        break;
+
+      case "substract":
+        if (prevAmount > 0) {
+          setAmount(prevAmount - 1);
+          break;
+        } else {
+          break;
+        }
+
+      default:
+        console.log("wrong type in changeAmount function");
+    }
+  };
+
   return (
     <div className={`col  ${classes.descriptionBody}`}>
       <p>SNEAKER COMPANY</p>
@@ -21,14 +43,19 @@ const Description = () => {
           className={`btn-group btn-group-toggle ${classes.descriptionBtnGroup}`}
           data-toggle="buttons"
         >
-          <label className="btn  ">-</label>
-          <label
-            className="btn "
+          <button className="btn" onClick={() => changeAmount("substract")}>
+            -
+          </button>
+          <button
+            className="btn"
             style={{ color: "black", fontSize: "medium" }}
+            disabled
           >
-            2
-          </label>
-          <label className="btn ">+</label>
+            {amount}
+          </button>
+          <button className="btn" onClick={() => changeAmount("add")}>
+            +
+          </button>
         </div>
         <button
           type="button"

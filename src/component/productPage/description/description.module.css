@@ -43,14 +43,16 @@
     width: 130px;
     margin-right: 20px;
 }
-.descriptionBtnGroup > label{
+.descriptionBtnGroup > button, .descriptionBtnGroup > button:disabled{
     background-color: hsl(223, 64%, 96.5%);
     color:hsl(26, 100%, 55%);
+    border: none;
     font-weight: bold;
     line-height: 35px;
     font-size: large;
+    opacity: 1;
 }
-.descriptionBtnGroup > label:hover{
+.descriptionBtnGroup > button:hover{
     background-color: hsl(223, 64%, 96.5%);
     color:hsl(25, 100%, 84%);
 }

@@ -1,0 +1,20 @@
+.navBarBody{
+    border-bottom: 1px solid rgb(179, 179, 179);
+    background-color: white;
+}
+
+.navBarItemCurrent{
+    border-bottom: 4px solid orange;
+    box-sizing:border-box
+   
+}
+
+.navBarAvatar:hover{
+   outline: 2px solid orange ;
+    border-radius: 50%;
+    
+}
+
+.navBarCart:hover{
+   filter:  invert(55%) sepia(52%) saturate(2987%) hue-rotate(359deg) brightness(99%) contrast(108%);
+}

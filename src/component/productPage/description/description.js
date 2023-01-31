@@ -35,7 +35,7 @@ const Description = () => {
       </p>
       <div className="row">
         <h2 className={`col ${classes.descriptionPrice}`}>$125.00</h2>
-        <p className={`col ${classes.descriptionSale}`}>50%</p>
+        <p className={`col align-self-start ${classes.descriptionSale}`}>50%</p>
       </div>
       <div className={` ${classes.descriptionOldPrice}`}>$250.00</div>
       <div style={{ marginTop: "20px" }}>

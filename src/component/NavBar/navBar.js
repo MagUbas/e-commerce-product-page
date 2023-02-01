@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import cart from "./icon-cart.svg";
 import avatar from "./image-avatar.png";
 import classes from "./navBar.module.css";
-import Cart from "../Cart/cart";
+import Cart from "./Cart/cart";
 import { useState } from "react";
 
 const NavBar = () => {

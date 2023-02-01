@@ -1,47 +1,24 @@
 
-
-.descriptionBody {
-    text-align: left;
-    margin-left: 80px;
-    padding-top: 50px;
-}
-
 .descriptionBody > p:first-of-type{
     color:hsl(26, 100%, 55%);
-    font-weight: bold;
-}
-
-.descriptionBody > h1:first-of-type{
-    font-weight: bold;
 }
 .descriptionText{
     color:hsl(219, 9%, 45%)
 }
 
-.descriptionPrice{
-    font-weight: bold;
-    line-height: 40px;
-}
 .descriptionSale{
     background-color: hsl(25, 100%, 94%);
     color:hsl(26, 100%, 55%);
     font-size:medium;
     border-radius: 5px;
-    display: inline-block;
-    text-align: center;
-  line-height: 40px;
-  margin-left: 10px;
 }
 
 .descriptionOldPrice{
     color:hsl(220, 14%, 75%);
-    font-weight: bold;
-    text-decoration: line-through;
 }
 .descriptionBtnGroup {
-
     width: 130px;
-    margin-right: 20px;
+ 
 }
 .descriptionBtnGroup > button, .descriptionBtnGroup > button:disabled{
     background-color: hsl(223, 64%, 96.5%);
@@ -57,17 +34,19 @@
     color:hsl(25, 100%, 84%);
 }
 .descriptionBtnCart{
-background-color: hsl(26, 100%, 55%);
-border-color:hsl(26, 100%, 55%);
+    background-color: hsl(26, 100%, 55%) !important;
+    border-color:hsl(26, 100%, 55%) !important;
 }
 .descriptionBtnCart:hover{
-    background-color: hsl(25, 100%, 70%);
-    border-color:hsl(25, 100%, 70%);
+    background-color: hsl(25, 100%, 70%) !important;
+    border-color:hsl(25, 100%, 70%) !important;
     }
+.descriptionBtnCart:disabled{
+    background-color: grey !important;
+    border-color:grey !important;
+    }
+    
 .logoBtn{
-    margin-right: 5px;
     filter:  brightness(0) invert(1);
-    scale: 0.7;
-    height: 100%;
 }
   

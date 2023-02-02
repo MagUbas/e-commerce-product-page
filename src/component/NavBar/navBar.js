@@ -19,7 +19,7 @@ const NavBar = () => {
         <img src={logo} height="27" alt="logo" loading="lazy" />
       </a>
 
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         {pages.map((el) => {
           return (
             <li

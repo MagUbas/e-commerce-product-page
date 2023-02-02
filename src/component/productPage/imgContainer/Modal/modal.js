@@ -5,7 +5,7 @@ import iconPrev from "./icon-previous.svg";
 
 const Modal = (props) => {
   return (
-    <div className={classes.modalBody}>
+    <div className={classes.modalBody} data-testid="modalImg">
       <div className={classes.modalContent}>
         <img
           src={iconClose}

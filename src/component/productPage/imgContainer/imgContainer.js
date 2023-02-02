@@ -18,7 +18,7 @@ const ImgContainer = () => {
           className={`rounded img-fluid ${
             img === activeImg ? classes.imgActive : null
           }`}
-          alt={img.match(/product-./gm)[0]}
+          alt={"thumbnail " + img.match(/product-./gm)[0]}
           onClick={() => setActiveImg(img)}
         />
       </div>
@@ -40,7 +40,7 @@ const ImgContainer = () => {
       <img
         src={activeImg}
         className="rounded img-fluid"
-        alt={activeImg.match(/product-./gm)[0]}
+        alt={"main " + activeImg.match(/product-./gm)[0]}
         onClick={() => setShowModal(true)}
       />
       <div className={`row ${classes.imgRow}`} style={{ marginTop: "20px" }}>

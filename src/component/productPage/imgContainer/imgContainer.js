@@ -57,7 +57,7 @@ const ImgContainer = () => {
           <img
             src={activeImg}
             className="rounded img-fluid"
-            alt={activeImg.match(/product-./gm)[0]}
+            alt={"main " + activeImg.match(/product-./gm)[0]}
           />
           <div
             className={`row ${classes.imgRow}`}

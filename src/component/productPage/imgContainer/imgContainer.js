@@ -34,9 +34,8 @@ const ImgContainer = () => {
     const newIndex = indexActive === 0 ? imgSet.length - 1 : indexActive - 1;
     setActiveImg(imgSet[newIndex]);
   };
-
-  return (
-    <div className="col">
+  const images = (
+    <>
       <img
         src={activeImg}
         className="rounded img-fluid"
@@ -46,6 +45,12 @@ const ImgContainer = () => {
       <div className={`row ${classes.imgRow}`} style={{ marginTop: "20px" }}>
         {thumbnail}
       </div>
+    </>
+  );
+
+  return (
+    <div className="col">
+      {images}
       {showModal ? (
         <Modal
           activeImg={activeImg}
@@ -54,17 +59,7 @@ const ImgContainer = () => {
           nextImg={handleNextImg}
           prevImg={handlePrevImg}
         >
-          <img
-            src={activeImg}
-            className="rounded img-fluid"
-            alt={"main " + activeImg.match(/product-./gm)[0]}
-          />
-          <div
-            className={`row ${classes.imgRow}`}
-            style={{ marginTop: "20px" }}
-          >
-            {thumbnail}
-          </div>
+          {images}
         </Modal>
       ) : null}
     </div>

@@ -1,6 +1,5 @@
 .navBarBody{
-    border-bottom: 1px solid rgb(179, 179, 179);
-    background-color: white;
+    max-width: 1300px !important;
 }
 
 .navBarItemCurrent{

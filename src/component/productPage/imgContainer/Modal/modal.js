@@ -13,7 +13,7 @@ const Modal = (props) => {
         props.closeModal();
       }}
     >
-      <div className={classes.modalContent}>
+      <div className={`col ${classes.modalContent}`}>
         <img
           src={iconClose}
           alt="close"
@@ -32,6 +32,7 @@ const Modal = (props) => {
           className={classes.modalPrev}
           onClick={props.prevImg}
         />
+
         {props.children}
       </div>
     </div>

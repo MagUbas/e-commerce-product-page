@@ -38,18 +38,21 @@ const ImgContainer = () => {
     <>
       <img
         src={activeImg}
-        className="rounded img-fluid"
+        className={` rounded img-fluid ${classes.mainImg}`}
         alt={"main " + activeImg.match(/product-./gm)[0]}
         onClick={() => setShowModal(true)}
       />
-      <div className={`row ${classes.imgRow}`} style={{ marginTop: "20px" }}>
+      <div
+        className={`row d-md-flex d-none mx-auto ${classes.imgRow}`}
+        style={{ marginTop: "20px" }}
+      >
         {thumbnail}
       </div>
     </>
   );
 
   return (
-    <div className="col">
+    <div className=" row col-md  mx-auto mb-3">
       {images}
       {showModal ? (
         <Modal

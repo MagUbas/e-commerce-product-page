@@ -10,7 +10,7 @@ const Cart = (props) => {
       }}
     >
       <div
-        className={`shadow mx-4  bg-white rounded d-flex flex-column ${classes.cartContent}`}
+        className={`shadow mx-4  bg-white rounded d-flex flex-column  ${classes.cartContent}`}
       >
         <h2 className="text-start border-bottom p-3">Cart</h2>
         <div className="d-flex  justify-content-center my-auto">

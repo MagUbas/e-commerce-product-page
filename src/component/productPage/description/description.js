@@ -26,7 +26,7 @@ const Description = () => {
 
   return (
     <div
-      className={`col ms-5 text-start d-flex flex-column  ${classes.descriptionBody}`}
+      className={`col mb-3 ms-3   ms-lg-5 text-start d-flex flex-column  ${classes.descriptionBody}`}
     >
       <p className="fw-bold">SNEAKER COMPANY</p>
       <h1 className="fw-bold">Fall Limited Edition Sneakers</h1>
@@ -35,23 +35,24 @@ const Description = () => {
         Featuring a durable rubber outer sole, they’ll withstand everything the
         weather can offer.
       </p>
-      <div className="mt-auto mb-0">
-        <div className="row row-cols-auto ">
-          <h3 className={`col my-auto fw-bold ${classes.descriptionPrice}`}>
-            $125.00
-          </h3>
-          <p className={` col my-auto fw-bold px-2 ${classes.descriptionSale}`}>
-            50%
+      <div className=" mt-auto mb-0">
+        <div className="d-flex flex-md-column justify-content-start mb-3 ">
+          <div className={` my-auto  `}>
+            <span className={` h3 fw-bold me-2 ${classes.descriptionPrice}`}>
+              $125.00
+            </span>
+            <span className={`h5  px-2 ${classes.descriptionSale}`}>50%</span>
+          </div>
+          <p
+            className={`fw-bold text-decoration-line-through  ms-md-0 ms-auto my-auto  ${classes.descriptionOldPrice}`}
+          >
+            $250.00
           </p>
         </div>
-        <div
-          className={` fw-bold text-decoration-line-through ${classes.descriptionOldPrice}`}
-        >
-          $250.00
-        </div>
-        <div className="mt-2">
+
+        <div className="d-flex flex-column  flex-md-row mt-2">
           <div
-            className={`btn-group btn-group-toggle me-3 ${classes.descriptionBtnGroup}`}
+            className={` btn-group btn-group-toggle me-md-3 ${classes.descriptionBtnGroup}`}
             data-toggle="buttons"
           >
             <button className="btn" onClick={() => changeAmount("substract")}>
@@ -70,7 +71,7 @@ const Description = () => {
           </div>
           <button
             type="button"
-            className={`btn btn-secondary btn-lg  ${classes.descriptionBtnCart}`}
+            className={`btn btn-secondary btn-lg mt-2 mt-md-0  ${classes.descriptionBtnCart}`}
             disabled={amount === 0}
           >
             <img
@@ -79,7 +80,7 @@ const Description = () => {
               height={15}
               className={` my-auto me-2 ${classes.logoBtn}`}
             />
-            <span className={` my-auto fs-6 `}>Add to cart</span>
+            <span className={`fs-6 my-auto  `}>Add to cart</span>
           </button>
         </div>
       </div>

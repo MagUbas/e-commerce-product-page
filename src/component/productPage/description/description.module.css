@@ -16,10 +16,7 @@
 .descriptionOldPrice{
     color:hsl(220, 14%, 75%);
 }
-.descriptionBtnGroup {
-    width: 130px;
- 
-}
+
 .descriptionBtnGroup > button, .descriptionBtnGroup > button:disabled{
     background-color: hsl(223, 64%, 96.5%);
     color:hsl(26, 100%, 55%);
@@ -49,4 +46,14 @@
 .logoBtn{
     filter:  brightness(0) invert(1);
 }
+  
+
+
+
+@media only screen and (min-width: 768px) {
+    .descriptionBtnGroup {
+        width: 130px;
+     
+    }
+  }
   

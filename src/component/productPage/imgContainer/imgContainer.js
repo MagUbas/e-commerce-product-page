@@ -38,7 +38,12 @@ const ImgContainer = () => {
     <>
       <img
         src={activeImg}
-        className={` rounded img-fluid ${classes.mainImg}`}
+        className={`d-flex d-md-none rounded img-fluid `}
+        alt={"main " + activeImg.match(/product-./gm)[0]}
+      />
+      <img
+        src={activeImg}
+        className={`d-none d-md-flex rounded img-fluid `}
         alt={"main " + activeImg.match(/product-./gm)[0]}
         onClick={() => setShowModal(true)}
       />

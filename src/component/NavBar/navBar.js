@@ -9,24 +9,32 @@ import { useState } from "react";
 const NavBar = () => {
   const pages = ["Collections", "Men", "Women", "About", "Contact"];
   const [showCart, setShowCart] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
+
   return (
     <div class={`container  p-md-3 border-bottom ${classes.navBarBody}`}>
       <nav className={`navbar navbar-expand-md  pb-2  `}>
-        <a
-          className="navbar-toggler  d-md-none"
-          data-bs-toggle="collapse"
-          href="#navbarMenuContent"
-          role="button"
-          aria-expanded="false"
-          aria-controls="navbarMenuContent"
-        >
-          <img src={menu} height="27" alt="logo" loading="lazy" />
-        </a>
-        <a className="navbar-brand   align-items-center  d-flex  " href="#top">
-          <img src={logo} height="20" alt="logo" loading="lazy" />
-        </a>
+        <ul className="nav justify-content-end">
+          <li
+            className="  d-flex  align-items-center"
+            onClick={() => {
+              setShowMenu(true);
+            }}
+          >
+            <img
+              src={menu}
+              height="20"
+              alt="menu"
+              className="d-md-none d-flex me-3"
+            />
+          </li>
+          <li className="  d-flex  align-items-center me-3">
+            <img src={logo} height="20" alt="logo" loading="lazy" />
+          </li>
+        </ul>
+
         <ul
-          className="navbar-nav collapse  me-auto mb-2 mb-lg-0"
+          className="navbar-nav d-none d-md-flex  me-auto mb-2 mb-lg-0"
           id="navbarMenuContent"
         >
           {pages.map((el) => {
@@ -58,8 +66,9 @@ const NavBar = () => {
               alt="cart"
               loading="lazy"
             />
+            <span className={classes.cartAmount}>3</span>
           </li>
-          <li className="nav-item ms-3">
+          <li className="nav-item ms-1">
             <img
               className={classes.navBarAvatar}
               src={avatar}

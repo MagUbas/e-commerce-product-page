@@ -1,6 +1,6 @@
 .cartBody {
     position: fixed; 
-    z-index: 1; 
+    z-index: 10; 
     right: 0;
     top: 0;
     width: 100%;
@@ -21,10 +21,19 @@
     min-height: 300px;
   }
 
+  .cartButton{
+    background-color: hsl(26, 100%, 55%) !important;
+    border-color:hsl(26, 100%, 55%) !important;
+}
+.cartButton:hover{
+    background-color: hsl(25, 100%, 70%) !important;
+    border-color:hsl(25, 100%, 70%) !important;
+    }
+
   @media only screen and (min-width: 768px) {
     .cartContent {
       margin-top: 80px;
-      width: 300px;
+      width: 350px;
     }
   }
   

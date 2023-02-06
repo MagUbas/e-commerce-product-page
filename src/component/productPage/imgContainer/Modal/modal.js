@@ -14,7 +14,7 @@ const Modal = (props) => {
       }}
     >
       <div className={`row ${classes.modalContent}`}>
-        <div class="carousel slide mb-5 p-0 ">
+        <div class="carousel slide p-0 ">
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img
@@ -48,7 +48,12 @@ const Modal = (props) => {
             onClick={props.closeModal}
           />
         </div>
-        {props.thumbnail}
+        <div
+          className={`row d-md-flex d-none mx-auto p-0 ${classes.imgRow}`}
+          style={{ marginTop: "20px" }}
+        >
+          {props.thumbnail}
+        </div>
       </div>
     </div>
   );

@@ -8,6 +8,13 @@
     outline: 3px solid hsl(26, 100%, 55%);
 }
 
-
+.nextImgIcon,.prevImgIcon{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    padding: 15px;
+}
 
   

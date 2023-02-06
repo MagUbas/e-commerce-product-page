@@ -40,6 +40,10 @@
   .modalPrev{
     left: -30px;
   } 
+  .imgRow > div > img:hover{
+    opacity: 0.7;
+   
+}
 
   
   @media (max-width: 767px) {

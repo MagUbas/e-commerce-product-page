@@ -1,9 +1,14 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../../redux/actions";
+
 import classes from "./description.module.css";
 import iconCart from "./icon-cart.svg";
 
 const Description = () => {
   const [amount, setAmount] = useState(1);
+  const dispatch = useDispatch();
+
   const changeAmount = (type) => {
     const prevAmount = amount;
     switch (type) {
@@ -23,6 +28,7 @@ const Description = () => {
         console.log("wrong type in changeAmount function");
     }
   };
+  const handleAddToCart = () => {};
 
   return (
     <div
@@ -73,6 +79,7 @@ const Description = () => {
             type="button"
             className={`btn btn-secondary btn-lg mt-2 mt-md-0  ${classes.descriptionBtnCart}`}
             disabled={amount === 0}
+            onClick={() => dispatch(addToCart(amount))}
           >
             <img
               src={iconCart}

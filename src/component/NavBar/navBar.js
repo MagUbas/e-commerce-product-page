@@ -5,9 +5,11 @@ import menu from "./images/icon-menu.svg";
 import classes from "./navBar.module.css";
 import Cart from "./Cart/cart";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const NavBar = () => {
   const pages = ["Collections", "Men", "Women", "About", "Contact"];
+  const store = useSelector((state) => state);
   const [showCart, setShowCart] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
 
@@ -66,7 +68,7 @@ const NavBar = () => {
               alt="cart"
               loading="lazy"
             />
-            <span className={classes.cartAmount}>3</span>
+            <span className={classes.cartAmount}>{store.amount}</span>
           </li>
           <li className="nav-item ms-1">
             <img
@@ -78,7 +80,9 @@ const NavBar = () => {
             />
           </li>
         </ul>
-        {showCart ? <Cart onClose={() => setShowCart(false)} /> : null}
+        {showCart ? (
+          <Cart store={store} onClose={() => setShowCart(false)} />
+        ) : null}
       </nav>
     </div>
   );

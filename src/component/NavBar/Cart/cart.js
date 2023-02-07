@@ -4,7 +4,6 @@ import img from "./image-product-1.jpg";
 import CartItem from "./cartItem/cartItem";
 
 const Cart = (props) => {
-  const [empty, setempty] = useState(false);
   const imgData = {
     src: img,
     title: "Fall Limited Edition Sneakers",
@@ -36,7 +35,7 @@ const Cart = (props) => {
       >
         <h2 className="text-start border-bottom p-3">Cart</h2>
 
-        {empty ? (
+        {props.store.amount === 0 ? (
           <p className="justify-content-center my-auto ">Your cart is empty.</p>
         ) : (
           content

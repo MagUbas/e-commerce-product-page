@@ -4,7 +4,7 @@ const CartItem = (props) => {
   return (
     <div className="d-flex justify-content-between mt-2">
       <img
-        src={props.imgData.src}
+        src={props.src}
         alt="product"
         className="rounded  my-auto "
         style={{ width: "60px", height: "60px" }}
@@ -24,6 +24,7 @@ const CartItem = (props) => {
         style={{ width: "20px", height: "20px" }}
         alt="delete"
         className="  my-auto"
+        onClick={props.onDelete}
       />
     </div>
   );

@@ -14,7 +14,7 @@ const NavBar = () => {
   const [showMenu, setShowMenu] = useState(false);
 
   return (
-    <div class={`container  p-md-3 border-bottom ${classes.navBarBody}`}>
+    <div className={`container  p-md-3 border-bottom ${classes.navBarBody}`}>
       <nav className={`navbar navbar-expand-md  pb-2  `}>
         <ul className="nav justify-content-end">
           <li

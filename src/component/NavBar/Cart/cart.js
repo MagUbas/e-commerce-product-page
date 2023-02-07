@@ -1,18 +1,29 @@
-import { useState } from "react";
 import classes from "./cart.module.css";
 import img from "./image-product-1.jpg";
 import CartItem from "./cartItem/cartItem";
+import { useDispatch } from "react-redux";
+import { deleteFromCart } from "../../../redux/actions";
 
 const Cart = (props) => {
-  const imgData = {
-    src: img,
-    title: "Fall Limited Edition Sneakers",
-    price: 125,
-    amount: 3,
+  const dispatch = useDispatch();
+  const handleDeleteFromCart = (item) => {
+    dispatch(deleteFromCart(item));
   };
+
   const content = (
     <div className="p-3 px-3 px-sm-5 px-md-3 mx-0 mx-sm-5 mx-md-0 ">
-      <CartItem imgData={imgData} />
+      {props.store.items.map((item) => {
+        return (
+          <CartItem
+            key={item.title}
+            src={img}
+            imgData={item}
+            onDelete={() => {
+              handleDeleteFromCart(item);
+            }}
+          />
+        );
+      })}
 
       <button
         type="button"

@@ -46,9 +46,9 @@ const ImgContainer = () => {
         alt={"main " + activeImg.match(/product-./gm)[0]}
         onClick={() => setShowModal(true)}
       />
-      <div class=" d-flex d-md-none carousel slide p-0 ">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
+      <div className=" d-flex d-md-none carousel slide p-0 ">
+        <div className="carousel-inner">
+          <div className="carousel-item active">
             <img
               src={activeImg}
               className={` rounded img-fluid p-0 `}
@@ -57,20 +57,28 @@ const ImgContainer = () => {
           </div>
         </div>
         <button
-          class={`carousel-control-prev`}
+          className={`carousel-control-prev`}
           type="button"
           onClick={handlePrevImg}
           style={{ opacity: "1" }}
         >
-          <img src={iconPrev} alt="prev" class={` ${classes.prevImgIcon}`} />
+          <img
+            src={iconPrev}
+            alt="prev"
+            className={` ${classes.prevImgIcon}`}
+          />
         </button>
         <button
-          class="carousel-control-next"
+          className="carousel-control-next"
           type="button"
           onClick={handleNextImg}
           style={{ opacity: "1" }}
         >
-          <img src={iconNext} alt="next" class={` ${classes.nextImgIcon}`} />
+          <img
+            src={iconNext}
+            alt="next"
+            className={` ${classes.nextImgIcon}`}
+          />
         </button>
       </div>
       <div

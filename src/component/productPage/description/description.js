@@ -28,7 +28,6 @@ const Description = () => {
         console.log("wrong type in changeAmount function");
     }
   };
-  const handleAddToCart = () => {};
 
   return (
     <div
@@ -79,7 +78,15 @@ const Description = () => {
             type="button"
             className={`btn btn-secondary btn-lg mt-2 mt-md-0  ${classes.descriptionBtnCart}`}
             disabled={amount === 0}
-            onClick={() => dispatch(addToCart(amount))}
+            onClick={() =>
+              dispatch(
+                addToCart({
+                  title: "Fall Limited Edition Sneakers",
+                  price: 125,
+                  amount: amount,
+                })
+              )
+            }
           >
             <img
               src={iconCart}

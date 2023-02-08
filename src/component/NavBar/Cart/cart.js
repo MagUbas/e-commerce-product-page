@@ -11,7 +11,7 @@ const Cart = (props) => {
   };
 
   const content = (
-    <div className="p-3 px-3 px-sm-5 px-md-3 mx-0 mx-sm-5 mx-md-0 ">
+    <div className="flex-grow-1   p-3 px-3 px-sm-5 px-md-3 mx-0 mx-sm-5 mx-md-0 ">
       {props.store.items.map((item) => {
         return (
           <CartItem
@@ -27,7 +27,7 @@ const Cart = (props) => {
 
       <button
         type="button"
-        className={`btn btn-danger w-100 mt-3 ${classes.cartButton}`}
+        className={`btn w-100 mt-3   ${classes.cartButton}`}
       >
         Checkout
       </button>
@@ -42,12 +42,14 @@ const Cart = (props) => {
       }}
     >
       <div
-        className={`shadow mx-4  bg-white rounded d-flex flex-column  ${classes.cartContent}`}
+        className={`shadow mx-4  bg-white rounded d-flex flex-column    ${classes.cartContent}`}
       >
         <h2 className="text-start border-bottom p-3">Cart</h2>
 
         {props.store.amount === 0 ? (
-          <p className="justify-content-center my-auto ">Your cart is empty.</p>
+          <p className="justify-content-center my-auto py-5 ">
+            Your cart is empty.
+          </p>
         ) : (
           content
         )}

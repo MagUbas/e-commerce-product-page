@@ -57,7 +57,7 @@ const ImgContainer = () => {
           </div>
         </div>
         <button
-          className={`carousel-control-prev`}
+          className={`carousel-control-prev ps-3 ps-sm-0`}
           type="button"
           onClick={handlePrevImg}
           style={{ opacity: "1" }}
@@ -69,7 +69,7 @@ const ImgContainer = () => {
           />
         </button>
         <button
-          className="carousel-control-next"
+          className="carousel-control-next pe-3 pe-sm-0"
           type="button"
           onClick={handleNextImg}
           style={{ opacity: "1" }}

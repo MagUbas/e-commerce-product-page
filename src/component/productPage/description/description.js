@@ -31,7 +31,7 @@ const Description = () => {
 
   return (
     <div
-      className={`col mb-3 ms-3   ms-lg-5 text-start d-flex flex-column  ${classes.descriptionBody}`}
+      className={`col ms-0 ms-md-3 ms-lg-5 mb-3   text-start d-flex flex-column  ${classes.descriptionBody}`}
     >
       <p className="fw-bold">SNEAKER COMPANY</p>
       <h1 className="fw-bold">Fall Limited Edition Sneakers</h1>

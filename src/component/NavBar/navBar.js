@@ -11,16 +11,18 @@ const NavBar = () => {
   const pages = ["Collections", "Men", "Women", "About", "Contact"];
   const store = useSelector((state) => state);
   const [showCart, setShowCart] = useState(false);
-  const [showMenu, setShowMenu] = useState(false);
+  const [showMenu, setShowMenu] = useState(true);
 
   return (
-    <div className={`container  p-md-3 border-bottom ${classes.navBarBody}`}>
-      <nav className={`navbar navbar-expand-md  pb-2  `}>
+    <div
+      className={`container  p-md-3 border-bottom position-relative ${classes.navBarBody}`}
+    >
+      <nav className={`navbar navbar-expand-md   pb-2  `}>
         <ul className="nav justify-content-end">
           <li
             className="  d-flex  align-items-center"
             onClick={() => {
-              setShowMenu(true);
+              setShowMenu((prevState) => !prevState);
             }}
           >
             <img
@@ -35,10 +37,7 @@ const NavBar = () => {
           </li>
         </ul>
 
-        <ul
-          className="navbar-nav d-none d-md-flex  me-auto mb-2 mb-lg-0"
-          id="navbarMenuContent"
-        >
+        <ul className={`navbar-nav  d-md-flex  me-auto mb-2 mb-lg-0  `}>
           {pages.map((el) => {
             return (
               <li

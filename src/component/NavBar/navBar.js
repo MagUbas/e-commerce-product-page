@@ -1,17 +1,26 @@
 import logo from "./images/logo.svg";
 import cart from "./images/icon-cart.svg";
 import avatar from "./images/image-avatar.png";
+import iconClose from "./images/icon-close.svg";
 import menu from "./images/icon-menu.svg";
 import classes from "./navBar.module.css";
 import Cart from "./Cart/cart";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 
 const NavBar = () => {
   const pages = ["Collections", "Men", "Women", "About", "Contact"];
   const store = useSelector((state) => state);
   const [showCart, setShowCart] = useState(false);
-  const [showMenu, setShowMenu] = useState(true);
+  const [showMenu, setShowMenu] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768) {
+        setShowMenu(false);
+      }
+    });
+  });
 
   return (
     <div
@@ -29,15 +38,43 @@ const NavBar = () => {
               src={menu}
               height="20"
               alt="menu"
-              className="d-md-none d-flex me-3"
+              className="d-flex d-md-none me-3"
             />
           </li>
-          <li className="  d-flex  align-items-center me-3">
+          <li className="  d-flex   align-items-center me-3">
             <img src={logo} height="20" alt="logo" loading="lazy" />
           </li>
         </ul>
+        <ul
+          className={`navbar-nav border-end  ps-1 d-md-none ${
+            showMenu ? "d-flex" : "d-none"
+          } ${classes.navBarMenu}`}
+        >
+          <img
+            src={iconClose}
+            alt="close"
+            className={`  mb-3 ${classes.imgClose}`}
+            onClick={() => setShowMenu(false)}
+          />
+          {pages.map((el) => {
+            return (
+              <li
+                className={`nav-item   ${
+                  window.location.href.includes(el)
+                    ? classes.navBarItemCurrent
+                    : null
+                }`}
+                key={el}
+              >
+                <a className={`nav-link  `} href={el}>
+                  {el}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
 
-        <ul className={`navbar-nav  d-md-flex  me-auto mb-2 mb-lg-0  `}>
+        <ul className={`navbar-nav d-none d-md-flex  me-auto mb-2 mb-lg-0  `}>
           {pages.map((el) => {
             return (
               <li

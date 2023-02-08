@@ -5,7 +5,7 @@ import { addToCart } from "../../../redux/actions";
 import classes from "./description.module.css";
 import iconCart from "./icon-cart.svg";
 
-const Description = () => {
+const Description = (props) => {
   const [amount, setAmount] = useState(1);
   const dispatch = useDispatch();
 
@@ -33,25 +33,23 @@ const Description = () => {
     <div
       className={`col ms-0 ms-md-3 ms-lg-5 mb-3   text-start d-flex flex-column  ${classes.descriptionBody}`}
     >
-      <p className="fw-bold">SNEAKER COMPANY</p>
-      <h1 className="fw-bold">Fall Limited Edition Sneakers</h1>
-      <p className={`${classes.descriptionText}`}>
-        These low-profile sneakers are your perfect casual wear companion.
-        Featuring a durable rubber outer sole, they’ll withstand everything the
-        weather can offer.
-      </p>
+      <p className="fw-bold">{props.item.company}</p>
+      <h1 className="fw-bold">{props.item.title}</h1>
+      <p className={`${classes.descriptionText}`}>{props.item.description}</p>
       <div className=" mt-auto mb-0">
         <div className="d-flex flex-md-column justify-content-start mb-3 ">
           <div className={` my-auto  `}>
             <span className={` h3 fw-bold me-2 ${classes.descriptionPrice}`}>
-              $125.00
+              ${props.item.price.toFixed(2)}
             </span>
-            <span className={`h5  px-2 ${classes.descriptionSale}`}>50%</span>
+            <span className={`h5  px-2 ${classes.descriptionSale}`}>
+              {(props.item.price / props.item.oldPrice) * 100}%
+            </span>
           </div>
           <p
             className={`fw-bold text-decoration-line-through  ms-md-0 ms-auto my-auto  ${classes.descriptionOldPrice}`}
           >
-            $250.00
+            ${props.item.oldPrice.toFixed(2)}
           </p>
         </div>
 
@@ -81,8 +79,9 @@ const Description = () => {
             onClick={() =>
               dispatch(
                 addToCart({
-                  title: "Fall Limited Edition Sneakers",
-                  price: 125,
+                  title: props.item.title,
+                  price: props.item.price,
+                  src: props.item.imgSrc[0],
                   amount: amount,
                 })
               )

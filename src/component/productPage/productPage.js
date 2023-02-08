@@ -6,8 +6,8 @@ const ProductPage = (props) => {
   return (
     <div className={`container  ${classes.productPageBody}`}>
       <div className="row my-4 mx-1 mx-sm-5 mx-mb-0 ">
-        <ImgContainer />
-        <Description />
+        <ImgContainer imgSet={props.item.imgSrc} />
+        <Description item={props.item} />
       </div>
     </div>
   );

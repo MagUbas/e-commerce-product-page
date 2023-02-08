@@ -1,5 +1,4 @@
 import classes from "./cart.module.css";
-import img from "./image-product-1.jpg";
 import CartItem from "./cartItem/cartItem";
 import { useDispatch } from "react-redux";
 import { deleteFromCart } from "../../../redux/actions";
@@ -16,7 +15,7 @@ const Cart = (props) => {
         return (
           <CartItem
             key={item.title}
-            src={img}
+            src={item.src}
             imgData={item}
             onDelete={() => {
               handleDeleteFromCart(item);

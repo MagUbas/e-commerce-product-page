@@ -1,19 +1,15 @@
 import { useState } from "react";
-import imageProduct1 from "./images/image-product-1.jpg";
-import imageProduct2 from "./images/image-product-2.jpg";
-import imageProduct3 from "./images/image-product-3.jpg";
-import imageProduct4 from "./images/image-product-4.jpg";
 import iconNext from "./images/icon-next.svg";
 import iconPrev from "./images/icon-previous.svg";
 
 import classes from "./imgContainer.module.css";
 import Modal from "./Modal/modal";
 
-const ImgContainer = () => {
-  const [activeImg, setActiveImg] = useState(imageProduct1);
+const ImgContainer = (props) => {
+  const [activeImg, setActiveImg] = useState(props.imgSet[0]);
   const [showModal, setShowModal] = useState(false);
-  const imgSet = [imageProduct1, imageProduct2, imageProduct3, imageProduct4];
-  const thumbnail = imgSet.map((img) => {
+
+  const thumbnail = props.imgSet.map((img) => {
     return (
       <div className="col" key={img.match(/product-./gm)[0]}>
         <img
@@ -28,14 +24,16 @@ const ImgContainer = () => {
     );
   });
   const handleNextImg = () => {
-    const indexActive = imgSet.indexOf(activeImg);
-    const newIndex = imgSet.length === indexActive + 1 ? 0 : indexActive + 1;
-    setActiveImg(imgSet[newIndex]);
+    const indexActive = props.imgSet.indexOf(activeImg);
+    const newIndex =
+      props.imgSet.length === indexActive + 1 ? 0 : indexActive + 1;
+    setActiveImg(props.imgSet[newIndex]);
   };
   const handlePrevImg = () => {
-    const indexActive = imgSet.indexOf(activeImg);
-    const newIndex = indexActive === 0 ? imgSet.length - 1 : indexActive - 1;
-    setActiveImg(imgSet[newIndex]);
+    const indexActive = props.imgSet.indexOf(activeImg);
+    const newIndex =
+      indexActive === 0 ? props.imgSet.length - 1 : indexActive - 1;
+    setActiveImg(props.imgSet[newIndex]);
   };
 
   return (

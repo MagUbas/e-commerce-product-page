@@ -12,9 +12,9 @@ const CartItem = (props) => {
       <div className="my-auto text-start mx-2" style={{ color: "grey" }}>
         <p className=" my-auto  ">{props.imgData.title}</p>
         <p className="my-auto ">
-          ${props.imgData.price} x {props.imgData.amount}
+          ${props.imgData.price.toFixed(2)} x {props.imgData.amount}
           <span className="fw-bold ms-2" style={{ color: "black" }}>
-            ${props.imgData.price * props.imgData.amount}
+            ${(props.imgData.price * props.imgData.amount).toFixed(2)}
           </span>
         </p>
       </div>

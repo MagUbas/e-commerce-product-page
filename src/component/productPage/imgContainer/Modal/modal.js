@@ -6,7 +6,7 @@ import iconPrev from "./images/icon-previous.svg";
 const Modal = (props) => {
   return (
     <div
-      className={` ${classes.modalBody}`}
+      className={`d-none d-md-flex justify-content-center align-items-center ${classes.modalBody}`}
       data-testid="modalImg"
       onClick={(e) => {
         if (e.target !== e.currentTarget) return;
@@ -14,37 +14,45 @@ const Modal = (props) => {
       }}
     >
       <div className={`row ${classes.modalContent}`}>
-        <div class="carousel slide p-0 ">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
+        <div className="carousel slide p-0 ">
+          <div className="carousel-inner">
+            <div className="carousel-item active">
               <img
                 src={props.activeImg}
-                class="d-block w-100 rounded"
+                className="d-block w-100 rounded"
                 alt={"main " + props.activeImg.match(/product-./gm)[0]}
               />
             </div>
           </div>
           <button
-            class={`carousel-control-prev`}
+            className={`carousel-control-prev`}
             type="button"
             onClick={props.prevImg}
             style={{ opacity: "1" }}
           >
-            <img src={iconPrev} alt="prev" class={` ${classes.modalPrev}`} />
+            <img
+              src={iconPrev}
+              alt="prev"
+              className={` ${classes.modalPrev}`}
+            />
           </button>
           <button
-            class="carousel-control-next"
+            className="carousel-control-next"
             type="button"
             onClick={props.nextImg}
             style={{ opacity: "1" }}
           >
-            <img src={iconNext} alt="next" class={` ${classes.modalNext}`} />
+            <img
+              src={iconNext}
+              alt="next"
+              className={` ${classes.modalNext}`}
+            />
           </button>
 
           <img
             src={iconClose}
             alt="close"
-            class={` ${classes.modalClose}`}
+            className={` ${classes.modalClose}`}
             onClick={props.closeModal}
           />
         </div>
